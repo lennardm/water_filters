@@ -1,6 +1,4 @@
 # mkdocs.yml
-site_name: Kinetico to Clack Swap Guide
-theme:
-  name: material
+site_name: Kinetico OD to Clack WS1TT Swap Guide
 nav:
   - Home: index.md
