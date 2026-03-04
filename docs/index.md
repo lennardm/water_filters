@@ -6,11 +6,13 @@
 
 ## Background & Why This Guide Exists
 
-Kinetico water treatment systems are well-engineered and long-lasting — but their valve heads are proprietary, expensive (€400–800+), and increasingly difficult to source in Sweden and much of Europe. When the valve controller fails, many owners are told to replace the entire system.
+Kinetico water treatment systems are well-engineered and long-lasting — but their valve heads are proprietary, expensive (€400–1000+), and difficult to source in Sweden/Europe as spare parts. When the valve controller fails, many owners are told to replace the entire system. Maintenance kits can be found on eBay, but these might not be made for the valve controllers of the 4060 system, which has two more spring loaded valves. These spring loaded valves are one issue that caused a failed rinse after the backwash in our system, resulting in salt water coming into the house each time a regeneration was done. Becuase of this, and because the filter itself was properly filtering the water (other than the salt water), I decided to change the Kinetico valve head to a **Clack WS1TT**.
 
-This guide explains how to replace the Kinetico valve head with a **Clack WS1TT**, an industry-standard twin-tank control valve that is widely available, fully documented, and inexpensive to service. The Clack WS1TT is a direct functional replacement for Kinetico twin-tank systems and can replicate all regeneration functions including countercurrent (upflow) regeneration.
+This guide explains how to replace the Kinetico valve head with a **Clack WS1TT**, an industry-standard twin-tank control valve that is widely available, fully documented, and inexpensive to service. The Clack WS1TT can replicate all regeneration functions including countercurrent (upflow) regeneration. However, **downflow regeneration is the more commonly available configuration** and works well in practice with only a modest reduction in salt efficiency. 
 
-> ⚠️ This guide was developed for the **Kinetico 4060 M/T** (anion/cation mixed-bed resin + Macrolite upper tanks). Most principles apply to other 4060s variants. Always verify specifications for your specific model.
+> ⚠️ This guide was developed based on the swap on a **Kinetico 4060 M/T** (anion/cation mixed-bed resin + Macrolite upper tanks). Most principles apply to other 4060s variants. Always verify specifications for your specific model.
+
+This guide is provided for free, and reflects what I have done to make it work. Do your own research! AI chat + searching tools like Perplexity are very useful. I can't take responsibility for the correctness of this guide, nor of any problems you may have when you are swapping yourself.
 
 ---
 
@@ -25,7 +27,7 @@ Before starting, identify your model. The main variants are:
 | 4060 M/T | Macrolite | Anion/cation mixed resin | Downflow | Countercurrent (upflow) |
 | 4040s OD | Fine mesh cation resin | Activated carbon | Upflow | Countercurrent |
 
-**All these models use countercurrent regeneration** — brine flows opposite to the normal service flow direction. This is important for Clack configuration.
+**All these models use countercurrent regeneration** — brine flows opposite to the normal service flow direction. This is more salt-efficient but requires a specific upflow valve body on the Clack side (see below).
 
 ### Key Kinetico specs (4060s OD MAC / 4060 M/T)
 
@@ -35,11 +37,29 @@ Before starting, identify your model. The main variants are:
 | Tank size (lower) | 2× 8" × 24" |
 | Backwash flow control | 3.00 GPM (4060s OD MAC) |
 | Brine refill flow control | 0.40 GPM |
-| Salt dose per regen | ~4.4 lbs / ~2.0 kg |
+| Salt dose per regen | ~4.4 lbs / ~2.0 kg (countercurrent optimised) |
 | Regen volume | 65 gallons / 246 litres |
 | Regen time | 40 minutes |
 | Venturi throat (OD MAC) | Orange, part 10060 |
-| Venturi throat (M/T) | Likely white (confirm on your unit) |
+| Venturi throat (M/T) | Likely white — confirm on your unit |
+
+---
+
+## Upflow vs Downflow Regeneration — Important Decision
+
+> ⚠️ **The Clack WS1TT valve body is not field-convertible between upflow and downflow regeneration.** The valve body, main piston, and injector port are all specific to the regeneration direction. A mismatch will result in hard water bypass during service. You must order the correct version upfront.
+
+| | Upflow (countercurrent) | Downflow (co-current) |
+|---|---|---|
+| Matches Kinetico regen direction | ✅ Yes | ❌ No |
+| Salt efficiency | Higher (~4.4 lbs/regen) | Lower (~5–5.5 lbs/regen) |
+| Main piston | Black/amber two-tone, V3011-01 | Solid amber, V3011 |
+| Injector port | UP port | DN port |
+| Injector (8" tank) | A (black) | C (violet) |
+| Controller setting | Up Brine | Dn Brine |
+| Availability | Less common — verify with supplier | Standard — widely available |
+
+**Practical recommendation:** If you can source the upflow valve body, use it. If not, downflow works well and is the pragmatic choice — the salt efficiency difference is ~20–30% more salt per regen, which is acceptable for most home installations.
 
 ---
 
@@ -47,10 +67,12 @@ Before starting, identify your model. The main variants are:
 
 ### Clack WS1TT parts to order
 
-- **Clack WS1TT CI control valve** (the CI controller supports upflow brining — verify "Up Brine" option in programming menu)
-- **Upflow piston** — must match the "Up Brine" software setting; physically different from downflow piston
+- **Clack WS1TT CI control valve** — specify **upflow or downflow** body at time of order (CI controller supports both via Up Brine / Dn Brine setting)
 - **DLFC (Drain Line Flow Control) disc: 3.0 GPM** — matches Kinetico backwash spec
-- **Injector set** — start with **A (black)** for 8" upflow configuration; have B (yellow) available as backup
+- **Injector:**
+  - Upflow: **A (black)** for 8" tanks
+  - Downflow: **C (violet)** for 8" tanks
+  - Have the next size available as backup
 - **BLFC (Brine Line Flow Control): 0.40 GPM** — may be built into brine valve assembly; confirm on your unit
 - Standard O-ring/seal kit for WS1TT
 - Bypass valve (if not included)
@@ -73,66 +95,74 @@ This is the most important step. Rather than guessing injector size, **measure t
 3. Run the system at normal operating pressure with the Kinetico valve in **brine draw cycle**
 4. **Measure:** volume drawn per minute (litres/min)
 5. **Measure:** total draw time until air is sucked in (all brine exhausted)
-6. Note: above ~40 PSI (2.75 bar) the venturi draw rate plateaus, so exact pressure is not critical
+6. Note: above ~40 PSI (2.75 bar) the venturi draw rate plateaus, so exact pressure is not critical for this test
 
-> **Why this matters:** The Clack injector controls brine draw rate. If you choose an injector that draws too fast for anion/cation resin, regeneration will be incomplete. If it draws too slowly, cycle times become impractical. Matching the Kinetico rate gives you a proven starting point.
+> **Why this matters:** The Clack injector controls brine draw rate. If you choose an injector that draws too fast for anion/cation resin, regeneration will be incomplete. Matching the Kinetico rate gives you a proven starting point.
 
 Also note the **venturi throat colour** when disassembling the Kinetico valve:
 - Orange = standard cation/Macrolite variant (part 10060)
 - White = smaller orifice, likely M/T or similar variant (part 1043)
-- White suggests slower draw rate → lean toward smaller Clack injector
+- White suggests slower draw rate → confirms conservative injector sizing is correct
 
 ---
 
 ## Step 2: Identify the Correct Clack Injector
 
-Cross-reference your measured brine draw rate (litres/min) against the Clack WS1TT injector flow rate table in the service manual (page varies by edition). 
+Cross-reference your measured brine draw rate (litres/min) against the Clack WS1TT injector flow rate table in the service manual.
 
-For **8" tanks, upflow regeneration**, the WS1TT manual table recommends:
+For **8" tanks**, the WS1TT manual table recommends:
 
-| Injector | Colour | Application |
-|---|---|---|
-| A | Black | 8" upflow — starting recommendation |
-| B | Yellow | 10" upflow / next size up if A draws too slowly |
+| Config | Injector | Colour | Port |
+|---|---|---|---|
+| Upflow regen | A | Black | UP port (plug DN) |
+| Downflow regen | C | Violet | DN port (plug UP) |
 
-**For anion/cation mixed resin (M/T model):** slower brine draw is preferable for better contact time. If your bucket test gives a lower flow rate than injector A produces, consider restricting via the BLFC disc rather than upsizing the injector.
+**For anion/cation mixed resin (M/T model):** slower brine draw is preferable for better ion exchange contact time. Do not upsize the injector even if draw seems slow — use the BLFC to fine-tune if needed.
 
-**Cold water note (5–10°C):** Cold water is more viscous. In an upflow configuration, this increases hydraulic pressure on the resin bed, so do not go larger than necessary to avoid bed lifting (though bed lifting is largely self-limiting when resin is in the lower tank with Macrolite above).
+**Cold water note (5–10°C):** Cold water is more viscous, slightly reducing draw rate vs rated values. In upflow mode, it also increases hydraulic pressure on the resin bed — do not oversize the injector. In downflow mode this is less of a concern.
 
 ---
 
 ## Step 3: Configure the Clack WS1TT
 
-### Physical configuration
+### Physical configuration — Downflow (standard availability)
 
-1. Install the **upflow piston** in the valve body (not the standard downflow piston)
-2. Install the chosen **injector (A/black)** in the **"UP" port** on the valve body
-3. Install a **plug** in the "DN" port
+1. Verify the **solid amber downflow main piston (V3011)** is installed
+2. Install **C (violet) injector** in the **DN port**
+3. Install a **plug** in the UP port
 4. Install the **3.0 GPM DLFC disc** in the drain line fitting
-5. Install or verify the **0.40 GPM BLFC** in the brine line fitting (may be pre-installed in brine valve assembly)
+5. Install or verify the **0.40 GPM BLFC** in the brine line fitting
+
+### Physical configuration — Upflow (if sourced)
+
+1. Verify the **black/amber upflow main piston (V3011-01)** is installed in an **upflow valve body**
+2. Install **A (black) injector** in the **UP port**
+3. Install a **plug** in the DN port
+4. Install the **3.0 GPM DLFC disc** in the drain line fitting
+5. Install or verify the **0.40 GPM BLFC** in the brine line fitting
 
 ### Controller programming (CI controller)
 
-Enter master programming mode and set:
+Enter master programming mode and configure:
 
-| Parameter | Setting |
-|---|---|
-| System type | Twin alternating softener |
-| Brine/slow rinse cycle | **Up Brine** (not Dn Brine) |
-| Brine draw time | From bucket test — total minutes to draw 65 gallons / 246 litres |
-| Backwash time | ~10 minutes (adjust to match media spec) |
-| Regeneration initiation | Meter (volumetric) |
-| Capacity between regens | From disc selection chart for your hardness level |
+| Parameter | Downflow setting | Upflow setting |
+|---|---|---|
+| Brine/slow rinse cycle | **Dn Brine** | **Up Brine** |
+| Backwash time | ~10 min | ~10 min |
+| Brine draw time | From bucket test | From bucket test |
+| Slow rinse time | 45–60 min (anion resin needs longer) | 45–60 min |
+| Refill time | Target brine volume ÷ 0.40 GPM | Target brine volume ÷ 0.40 GPM |
+| Salt dose | ~5–5.5 lbs / 2.3–2.5 kg | ~4.4 lbs / 2.0 kg |
 
-> **Brine draw time calculation:** If your bucket test shows 1.5 litres/min draw rate and you need 246 litres total, set brine draw time to ~164 minutes (÷ by two tanks regenerating alternately = ~82 minutes each, depending on your system cycle structure).
+> **Brine draw time:** Use your bucket test result — total minutes until brine is exhausted. Program this directly into the brine draw stage duration.
+
+> **Slow rinse:** For anion/cation mixed resin, slow rinse after brine draw is critical. Set generously (45–60 min) to ensure full displacement of spent brine regardless of upflow or downflow configuration.
 
 ---
 
 ## Step 4: Plumbing
 
-The WS1TT connects with standard 1" or 1¼" fittings. The Kinetico system used 1¼" custom adapters (E-clip style) — you will need to adapt to standard threaded or compression fittings to suit your plumbing.
-
-Connection mapping:
+The WS1TT connects with standard 1" or 1¼" fittings. The Kinetico system used 1¼" custom adapters (E-clip style) — adapt to standard threaded or compression fittings to suit your plumbing.
 
 | Kinetico port | Clack WS1TT equivalent |
 |---|---|
@@ -148,10 +178,10 @@ Connection mapping:
 
 1. **Restore water supply** slowly and check for leaks
 2. **Manually initiate a regeneration cycle** from the controller
-3. During brine draw, **time the draw** and compare to your benchmark
+3. During brine draw, **time the draw** and compare to your Kinetico benchmark
 4. Check drain flow during backwash — should match ~3.0 GPM (11.4 L/min)
 5. After first regeneration, **test outlet water hardness** to confirm resin is fully regenerated
-6. Monitor for 2–3 regen cycles and adjust brine draw time if needed
+6. Monitor for 2–3 regen cycles and adjust brine draw time or salt dose if needed
 
 ---
 
@@ -159,38 +189,42 @@ Connection mapping:
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Hard water breakthrough | Brine draw too fast / insufficient contact time | Reduce BLFC size or shorten regen interval |
+| Hard water breakthrough | Insufficient brine contact time | Extend slow rinse time; check injector size |
 | Resin not regenerating fully | Brine draw time too short | Increase brine draw time in controller |
-| Excessive water to drain | Backwash time too long or DLFC too large | Reduce backwash time or swap DLFC disc |
+| Excessive water to drain | Backwash time too long or DLFC too large | Reduce backwash time or swap DLFC to 2.5 GPM |
 | Bed channelling / resin in outlet | Backwash flow too high | Reduce DLFC to 2.5 GPM and re-test |
-| Brine tank not refilling | BLFC blocked or wrong RFC setting | Check BLFC disc, verify refill time in controller |
+| Brine tank not refilling | BLFC blocked or wrong refill time | Check BLFC disc; verify refill time in controller |
+| Hard water bypass during service | Valve body/piston mismatch | Verify upflow body + upflow piston, or downflow body + downflow piston — never mix |
 
 ---
 
 ## Notes for Swedish / Nordic Installations
 
-- Groundwater with pump + pressure vessel (hydropress): pressure will cycle between cut-in and cut-out. The Clack venturi draw rate plateaus above ~2.75 bar so this does not affect brine draw consistency.
-- Cold groundwater (5–10°C) is common. This slightly reduces brine draw rate vs. rated values but also increases hydraulic pressure on the resin bed in upflow mode — do not oversize the injector.
-- Kinetico spare parts are difficult to source in Sweden. Clack parts (injectors, DLFC discs, O-ring kits, pistons) are available from multiple European water treatment suppliers and cost only a few euros each.
-- The Clack WS1TT requires a **230V power supply** for the controller motor. Unlike Kinetico, it is not water-powered. Budget for a nearby power outlet if not already present.
+- Groundwater with pump + pressure vessel (hydropress): pressure cycles between cut-in and cut-out. The Clack venturi draw rate plateaus above ~2.75 bar so this does not affect brine draw consistency.
+- Cold groundwater (5–10°C) slightly reduces brine draw rate vs. rated values. In upflow mode, do not oversize the injector as cold dense water increases hydraulic pressure on the resin bed.
+- Kinetico spare parts are difficult to source in Sweden. Clack parts (injectors, DLFC discs, O-ring kits, pistons) are available from multiple European water treatment suppliers for a few euros each.
+- The Clack WS1TT requires a **230V power supply** for the controller motor. Unlike Kinetico, it is not water-powered. Ensure a nearby power outlet is available.
 
 ---
 
 ## Summary Checklist
 
+- [ ] Identify your Kinetico model (4060 M/T, 4060s OD MAC, etc.)
+- [ ] Decide: upflow or downflow regen (upflow = more efficient; downflow = easier to source)
 - [ ] Benchmark Kinetico brine draw rate (bucket test)
-- [ ] Note venturi throat colour from spare/old head
-- [ ] Order Clack WS1TT CI with upflow piston
+- [ ] Note venturi throat colour from spare/old Kinetico head
+- [ ] Order Clack WS1TT CI — specify upflow or downflow valve body
 - [ ] Order 3.0 GPM DLFC disc
-- [ ] Order A (black) injector (and B/yellow as backup)
+- [ ] Order correct injector: A/black (upflow) or C/violet (downflow)
 - [ ] Verify 0.40 GPM BLFC in brine valve assembly
-- [ ] Install injector in UP port, plug in DN port
-- [ ] Set controller to Up Brine mode
+- [ ] Install injector in correct port; plug the other port
+- [ ] Set controller to Up Brine or Dn Brine to match valve body
 - [ ] Program brine draw time from bucket test result
+- [ ] Set slow rinse to 45–60 min (anion/mixed resin)
 - [ ] Verify first regeneration cycle and test water quality
 
 ---
 
 *Guide developed based on Kinetico 4060 M/T / 4060s OD MAC service documentation and the Water Specialist WS1TT Drawings and Service Manual. Always consult the full Clack WS1TT CI Programming Manual for complete parameter descriptions.*
 
-© Lennard Mooij, 2026. Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+*© Lennard Mooij, 2026. Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
