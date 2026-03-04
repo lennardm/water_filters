@@ -6,13 +6,13 @@
 
 ## Background & Why This Guide Exists
 
-Kinetico water treatment systems are well-engineered and long-lasting — but their valve heads are proprietary, expensive (€400–1000+), and difficult to source in Sweden/Europe as spare parts. When the valve controller fails, many owners are told to replace the entire system. Maintenance kits can be found on eBay, but these might not be made for the valve controllers of the 4060 system, which has two more spring loaded valves. These spring loaded valves are one issue that caused a failed rinse after the backwash in our system, resulting in salt water coming into the house each time a regeneration was done. Becuase of this, and because the filter itself was properly filtering the water (other than the salt water), I decided to change the Kinetico valve head to a **Clack WS1TT**.
+Kinetico water treatment systems are well-engineered and long-lasting — but their valve heads are proprietary, expensive (€400–1000+), and difficult to source in Sweden/Europe as spare parts. When the valve controller fails, many owners are told to replace the entire system. Maintenance kits can be found on eBay, but these might not be made for the valve controllers of the 4060 system, which has two more spring-loaded valves. These spring-loaded valves are one issue that caused a failed rinse after the backwash in our system, resulting in salt water coming into the house each time a regeneration was done. Because of this, and because the filter itself was properly filtering the water (other than the salt water), I decided to change the Kinetico valve head to a **Clack WS1TT**.
 
 This guide explains how to replace the Kinetico valve head with a **Clack WS1TT**, an industry-standard twin-tank control valve that is widely available, fully documented, and inexpensive to service. The Clack WS1TT can replicate all regeneration functions including countercurrent (upflow) regeneration. However, **downflow regeneration is the more commonly available configuration** and works well in practice with only a modest reduction in salt efficiency. 
 
 > ⚠️ This guide was developed based on the swap on a **Kinetico 4060 M/T** (anion/cation mixed-bed resin + Macrolite upper tanks). Most principles apply to other 4060s variants. Always verify specifications for your specific model.
 
-This guide is provided for free, and reflects what I have done to make it work. Do your own research! AI chat + searching tools like Perplexity are very useful. I can't take responsibility for the correctness of this guide, nor of any problems you may have when you are swapping yourself.
+This guide is provided for free, and reflects what I have done to make it work. Do your own research! AI chat + searching tools like Perplexity are very useful. I can't take responsibility for the correctness of this guide, nor of any problems you may have when doing it yourself.
 
 ---
 
