@@ -1,0 +1,6 @@
+# mkdocs.yml
+site_name: Kinetico to Clack Swap Guide
+theme:
+  name: material
+nav:
+  - Home: index.md
