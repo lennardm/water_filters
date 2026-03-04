@@ -47,7 +47,12 @@ Before starting, identify your model. The main variants are:
 
 ## Upflow vs Downflow Regeneration — Important Decision
 
-> ⚠️ **The Clack WS1TT valve body is not field-convertible between upflow and downflow regeneration.** The valve body, main piston, and injector port are all specific to the regeneration direction. A mismatch will result in hard water bypass during service. You must order the correct version upfront.
+> ⚠️ **Check your specific Clack manual regarding field conversion between upflow and downflow.**
+> Some valve models are not convertible; others are. With the WS1TT CI (as of the 2013 manual,
+> page 22), field conversion **is** possible as long as the software supports Up Brine. To convert
+> to upflow you need to: swap in the upflow piston (V3011-01), move the injector to the UP port,
+> plug the DN port, and set the controller to Up Brine. A mismatch of piston and software setting
+> will result in hard water bypass during service.
 
 | | Upflow (countercurrent) | Downflow (co-current) |
 |---|---|---|
@@ -213,7 +218,7 @@ The WS1TT connects with standard 1" or 1¼" fittings. The Kinetico system used 1
 - [ ] Decide: upflow or downflow regen (upflow = more efficient; downflow = easier to source)
 - [ ] Benchmark Kinetico brine draw rate (bucket test)
 - [ ] Note venturi throat colour from spare/old Kinetico head
-- [ ] Order Clack WS1TT CI — specify upflow or downflow valve body
+- [ ] Order Clack WS1TT CI — check manual for field convertibility; if convertible, order upflow piston (V3011-01) separately if needed
 - [ ] Order 3.0 GPM DLFC disc
 - [ ] Order correct injector: A/black (upflow) or C/violet (downflow)
 - [ ] Verify 0.40 GPM BLFC in brine valve assembly
