@@ -48,7 +48,7 @@ Before starting, identify your model. The main variants are:
 ## Upflow vs Downflow Regeneration — Important Decision
 
 > ⚠️ **Check your specific Clack manual regarding field conversion between upflow and downflow.**
-> Some valve models are not convertible; others are. With the WS1TT CI (as of the 2013 manual,
+> Some valve models are not convertible; others are. With the WS1TT CI (as of the manual dated 3/14/2022 (Form No. V3115-TT),
 > page 22), field conversion **is** possible as long as the software supports Up Brine. To convert
 > to upflow you need to: swap in the upflow piston (V3011-01), move the injector to the UP port,
 > plug the DN port, and set the controller to Up Brine. A mismatch of piston and software setting
