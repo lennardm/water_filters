@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Kinetico OD to Clack WS1TT Swap Guide</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Kinetico OD to Clack WS1TT Swap Guide</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#swapping-a-kinetico-valve-controller-for-a-clack-ws1tt" class="nav-link">Swapping a Kinetico Valve Controller for a Clack WS1TT</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#a-practical-guide-for-kinetico-4060-mt-4060s-od-mac-and-similar-twin-tank-systems" class="nav-link">A practical guide for Kinetico 4060 M/T, 4060s OD MAC and similar twin-tank systems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#background-why-this-guide-exists" class="nav-link">Background &amp; Why This Guide Exists</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#understanding-your-kinetico-system" class="nav-link">Understanding Your Kinetico System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#upflow-vs-downflow-regeneration-important-decision" class="nav-link">Upflow vs Downflow Regeneration — Important Decision</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tools-parts-required" class="nav-link">Tools &amp; Parts Required</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-1-benchmark-the-kinetico-venturi-before-you-remove-it" class="nav-link">Step 1: Benchmark the Kinetico Venturi Before You Remove It</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-2-identify-the-correct-clack-injector" class="nav-link">Step 2: Identify the Correct Clack Injector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-3-configure-the-clack-ws1tt" class="nav-link">Step 3: Configure the Clack WS1TT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-4-plumbing" class="nav-link">Step 4: Plumbing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#step-5-commission-and-verify" class="nav-link">Step 5: Commission and Verify</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#notes-for-swedish-nordic-installations" class="nav-link">Notes for Swedish / Nordic Installations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#summary-checklist" class="nav-link">Summary Checklist</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="swapping-a-kinetico-valve-controller-for-a-clack-ws1tt">Swapping a Kinetico Valve Controller for a Clack WS1TT</h1>
+<h2 id="a-practical-guide-for-kinetico-4060-mt-4060s-od-mac-and-similar-twin-tank-systems">A practical guide for Kinetico 4060 M/T, 4060s OD MAC and similar twin-tank systems</h2>
+<hr />
+<h2 id="background-why-this-guide-exists">Background &amp; Why This Guide Exists</h2>
+<p>Kinetico water treatment systems are well-engineered and long-lasting — but their valve heads are proprietary, expensive (€400–1000+), and difficult to source in Sweden/Europe as spare parts. When the valve controller fails, many owners are told to replace the entire system. Maintenance kits can be found on eBay, but these might not be made for the valve controllers of the 4060 system, which has two more spring-loaded valves. These spring-loaded valves are one issue that caused a failed rinse after the backwash in our system, resulting in salt water coming into the house each time a regeneration was done. Because of this, and because the filter itself was properly filtering the water (other than the salt water), I decided to change the Kinetico valve head to a <strong>Clack WS1TT</strong>.</p>
+<p>This guide explains how to replace the Kinetico valve head with a <strong>Clack WS1TT</strong>, an industry-standard twin-tank control valve that is widely available, fully documented, and inexpensive to service. The Clack WS1TT can replicate all regeneration functions including countercurrent (upflow) regeneration. However, <strong>downflow regeneration is the more commonly available configuration</strong> and works well in practice with only a modest reduction in salt efficiency. </p>
+<blockquote>
+<p>⚠️ This guide was developed based on the swap on a <strong>Kinetico 4060 M/T</strong> (anion/cation mixed-bed resin + Macrolite upper tanks). Most principles apply to other 4060s variants. Always verify specifications for your specific model.</p>
+</blockquote>
+<p>This guide is provided for free, and reflects what I have done to make it work. Do your own research! AI chat + searching tools like Perplexity are very useful. I can't take responsibility for the correctness of this guide, nor of any problems you may have when doing it yourself.</p>
+<hr />
+<h2 id="understanding-your-kinetico-system">Understanding Your Kinetico System</h2>
+<p>Before starting, identify your model. The main variants are:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Upper tanks</th>
+<th>Lower tanks</th>
+<th>Service flow</th>
+<th>Regen flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4060s OD MAC</td>
+<td>Macrolite (5 micron filter)</td>
+<td>Standard cation resin</td>
+<td>Downflow</td>
+<td>Countercurrent (upflow)</td>
+</tr>
+<tr>
+<td>4060s OD AC</td>
+<td>Activated carbon</td>
+<td>Standard cation resin</td>
+<td>Downflow</td>
+<td>Countercurrent (upflow)</td>
+</tr>
+<tr>
+<td>4060 M/T</td>
+<td>Macrolite</td>
+<td>Anion/cation mixed resin</td>
+<td>Downflow</td>
+<td>Countercurrent (upflow)</td>
+</tr>
+<tr>
+<td>4040s OD</td>
+<td>Fine mesh cation resin</td>
+<td>Activated carbon</td>
+<td>Upflow</td>
+<td>Countercurrent</td>
+</tr>
+</tbody>
+</table>
+<p><strong>All these models use countercurrent regeneration</strong> — brine flows opposite to the normal service flow direction. This is more salt-efficient but requires a specific upflow valve body on the Clack side (see below).</p>
+<h3 id="key-kinetico-specs-4060s-od-mac-4060-mt">Key Kinetico specs (4060s OD MAC / 4060 M/T)</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tank size (upper)</td>
+<td>2× 8" × 17"</td>
+</tr>
+<tr>
+<td>Tank size (lower)</td>
+<td>2× 8" × 24"</td>
+</tr>
+<tr>
+<td>Backwash flow control</td>
+<td>3.00 GPM (4060s OD MAC)</td>
+</tr>
+<tr>
+<td>Brine refill flow control</td>
+<td>0.40 GPM</td>
+</tr>
+<tr>
+<td>Salt dose per regen</td>
+<td>~4.4 lbs / ~2.0 kg (countercurrent optimised)</td>
+</tr>
+<tr>
+<td>Regen volume</td>
+<td>65 gallons / 246 litres</td>
+</tr>
+<tr>
+<td>Regen time</td>
+<td>40 minutes</td>
+</tr>
+<tr>
+<td>Venturi throat (OD MAC)</td>
+<td>Orange, part 10060</td>
+</tr>
+<tr>
+<td>Venturi throat (M/T)</td>
+<td>Likely white — confirm on your unit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="upflow-vs-downflow-regeneration-important-decision">Upflow vs Downflow Regeneration — Important Decision</h2>
+<blockquote>
+<p>⚠️ <strong>Check your specific Clack manual regarding field conversion between upflow and downflow.</strong>
+Some valve models are not convertible; others are. With the WS1TT CI (as of the manual dated 3/14/2022 (Form No. V3115-TT),
+page 22), field conversion <strong>is</strong> possible as long as the software supports Up Brine. To convert
+to upflow you need to: swap in the upflow piston (V3011-01), move the injector to the UP port,
+plug the DN port, and set the controller to Up Brine. A mismatch of piston and software setting
+will result in hard water bypass during service.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Upflow (countercurrent)</th>
+<th>Downflow (co-current)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matches Kinetico regen direction</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>Salt efficiency</td>
+<td>Higher (~4.4 lbs/regen)</td>
+<td>Lower (~5–5.5 lbs/regen)</td>
+</tr>
+<tr>
+<td>Main piston</td>
+<td>Black/amber two-tone, V3011-01</td>
+<td>Solid amber, V3011</td>
+</tr>
+<tr>
+<td>Injector port</td>
+<td>UP port</td>
+<td>DN port</td>
+</tr>
+<tr>
+<td>Injector (8" tank)</td>
+<td>A (black)</td>
+<td>C (violet)</td>
+</tr>
+<tr>
+<td>Controller setting</td>
+<td>Up Brine</td>
+<td>Dn Brine</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>Less common — verify with supplier</td>
+<td>Standard — widely available</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical recommendation:</strong> If you can source the upflow valve body, use it. If not, downflow works well and is the pragmatic choice — the salt efficiency difference is ~20–30% more salt per regen, which is acceptable for most home installations.</p>
+<hr />
+<h2 id="tools-parts-required">Tools &amp; Parts Required</h2>
+<h3 id="clack-ws1tt-parts-to-order">Clack WS1TT parts to order</h3>
+<ul>
+<li><strong>Clack WS1TT CI control valve</strong> — specify <strong>upflow or downflow</strong> body at time of order (CI controller supports both via Up Brine / Dn Brine setting)</li>
+<li><strong>DLFC (Drain Line Flow Control) disc: 3.0 GPM</strong> — matches Kinetico backwash spec</li>
+<li><strong>Injector:</strong></li>
+<li>Upflow: <strong>A (black)</strong> for 8" tanks</li>
+<li>Downflow: <strong>C (violet)</strong> for 8" tanks</li>
+<li>Have the next size available as backup</li>
+<li><strong>BLFC (Brine Line Flow Control): 0.40 GPM</strong> — may be built into brine valve assembly; confirm on your unit</li>
+<li>Standard O-ring/seal kit for WS1TT</li>
+<li>Bypass valve (if not included)</li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li>Adjustable wrench / pipe wrenches</li>
+<li>Bucket (10–20 litres) for brine draw test</li>
+<li>Saturated brine solution (~265 g/L NaCl) for testing</li>
+<li>Stopwatch</li>
+<li>Measuring jug</li>
+</ul>
+<hr />
+<h2 id="step-1-benchmark-the-kinetico-venturi-before-you-remove-it">Step 1: Benchmark the Kinetico Venturi Before You Remove It</h2>
+<p>This is the most important step. Rather than guessing injector size, <strong>measure the actual brine draw rate of your Kinetico valve</strong> so you can match it exactly on the Clack.</p>
+<ol>
+<li>Fill a bucket with <strong>saturated brine</strong> (~265 g/L — dissolve salt in water until no more dissolves)</li>
+<li>Connect the Kinetico valve's brine inlet to the bucket</li>
+<li>Run the system at normal operating pressure with the Kinetico valve in <strong>brine draw cycle</strong></li>
+<li><strong>Measure:</strong> volume drawn per minute (litres/min)</li>
+<li><strong>Measure:</strong> total draw time until air is sucked in (all brine exhausted)</li>
+<li>Note: above ~40 PSI (2.75 bar) the venturi draw rate plateaus, so exact pressure is not critical for this test</li>
+</ol>
+<blockquote>
+<p><strong>Why this matters:</strong> The Clack injector controls brine draw rate. If you choose an injector that draws too fast for anion/cation resin, regeneration will be incomplete. Matching the Kinetico rate gives you a proven starting point.</p>
+</blockquote>
+<p>Also note the <strong>venturi throat colour</strong> when disassembling the Kinetico valve:
+- Orange = standard cation/Macrolite variant (part 10060)
+- White = smaller orifice, likely M/T or similar variant (part 1043)
+- White suggests slower draw rate → confirms conservative injector sizing is correct</p>
+<hr />
+<h2 id="step-2-identify-the-correct-clack-injector">Step 2: Identify the Correct Clack Injector</h2>
+<p>Cross-reference your measured brine draw rate (litres/min) against the Clack WS1TT injector flow rate table in the service manual.</p>
+<p>For <strong>8" tanks</strong>, the WS1TT manual table recommends:</p>
+<table>
+<thead>
+<tr>
+<th>Config</th>
+<th>Injector</th>
+<th>Colour</th>
+<th>Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Upflow regen</td>
+<td>A</td>
+<td>Black</td>
+<td>UP port (plug DN)</td>
+</tr>
+<tr>
+<td>Downflow regen</td>
+<td>C</td>
+<td>Violet</td>
+<td>DN port (plug UP)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For anion/cation mixed resin (M/T model):</strong> slower brine draw is preferable for better ion exchange contact time. Do not upsize the injector even if draw seems slow — use the BLFC to fine-tune if needed.</p>
+<p><strong>Cold water note (5–10°C):</strong> Cold water is more viscous, slightly reducing draw rate vs rated values. In upflow mode, it also increases hydraulic pressure on the resin bed — do not oversize the injector. In downflow mode this is less of a concern.</p>
+<hr />
+<h2 id="step-3-configure-the-clack-ws1tt">Step 3: Configure the Clack WS1TT</h2>
+<h3 id="physical-configuration-downflow-standard-availability">Physical configuration — Downflow (standard availability)</h3>
+<ol>
+<li>Verify the <strong>solid amber downflow main piston (V3011)</strong> is installed</li>
+<li>Install <strong>C (violet) injector</strong> in the <strong>DN port</strong></li>
+<li>Install a <strong>plug</strong> in the UP port</li>
+<li>Install the <strong>3.0 GPM DLFC disc</strong> in the drain line fitting</li>
+<li>Install or verify the <strong>0.40 GPM BLFC</strong> in the brine line fitting</li>
+</ol>
+<h3 id="physical-configuration-upflow-if-sourced">Physical configuration — Upflow (if sourced)</h3>
+<ol>
+<li>Verify the <strong>black/amber upflow main piston (V3011-01)</strong> is installed in an <strong>upflow valve body</strong></li>
+<li>Install <strong>A (black) injector</strong> in the <strong>UP port</strong></li>
+<li>Install a <strong>plug</strong> in the DN port</li>
+<li>Install the <strong>3.0 GPM DLFC disc</strong> in the drain line fitting</li>
+<li>Install or verify the <strong>0.40 GPM BLFC</strong> in the brine line fitting</li>
+</ol>
+<h3 id="controller-programming-ci-controller">Controller programming (CI controller)</h3>
+<p>Enter master programming mode and configure:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Downflow setting</th>
+<th>Upflow setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brine/slow rinse cycle</td>
+<td><strong>Dn Brine</strong></td>
+<td><strong>Up Brine</strong></td>
+</tr>
+<tr>
+<td>Backwash time</td>
+<td>~10 min</td>
+<td>~10 min</td>
+</tr>
+<tr>
+<td>Brine draw time</td>
+<td>From bucket test</td>
+<td>From bucket test</td>
+</tr>
+<tr>
+<td>Slow rinse time</td>
+<td>45–60 min (anion resin needs longer)</td>
+<td>45–60 min</td>
+</tr>
+<tr>
+<td>Refill time</td>
+<td>Target brine volume ÷ 0.40 GPM</td>
+<td>Target brine volume ÷ 0.40 GPM</td>
+</tr>
+<tr>
+<td>Salt dose</td>
+<td>~5–5.5 lbs / 2.3–2.5 kg</td>
+<td>~4.4 lbs / 2.0 kg</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Brine draw time:</strong> Use your bucket test result — total minutes until brine is exhausted. Program this directly into the brine draw stage duration.</p>
+<p><strong>Slow rinse:</strong> For anion/cation mixed resin, slow rinse after brine draw is critical. Set generously (45–60 min) to ensure full displacement of spent brine regardless of upflow or downflow configuration.</p>
+</blockquote>
+<hr />
+<h2 id="step-4-plumbing">Step 4: Plumbing</h2>
+<p>The WS1TT connects with standard 1" or 1¼" fittings. The Kinetico system used 1¼" custom adapters (E-clip style) — adapt to standard threaded or compression fittings to suit your plumbing.</p>
+<table>
+<thead>
+<tr>
+<th>Kinetico port</th>
+<th>Clack WS1TT equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Untreated water inlet</td>
+<td>Inlet port</td>
+</tr>
+<tr>
+<td>Treated water outlet</td>
+<td>Outlet port</td>
+</tr>
+<tr>
+<td>2nd tank connection ports</td>
+<td>In/Out Head connections</td>
+</tr>
+<tr>
+<td>Brine line (0.375" tube)</td>
+<td>Brine line fitting (adapt as needed)</td>
+</tr>
+<tr>
+<td>Drain (0.5" tube)</td>
+<td>Drain fitting + DLFC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-5-commission-and-verify">Step 5: Commission and Verify</h2>
+<ol>
+<li><strong>Restore water supply</strong> slowly and check for leaks</li>
+<li><strong>Manually initiate a regeneration cycle</strong> from the controller</li>
+<li>During brine draw, <strong>time the draw</strong> and compare to your Kinetico benchmark</li>
+<li>Check drain flow during backwash — should match ~3.0 GPM (11.4 L/min)</li>
+<li>After first regeneration, <strong>test outlet water hardness</strong> to confirm resin is fully regenerated</li>
+<li>Monitor for 2–3 regen cycles and adjust brine draw time or salt dose if needed</li>
+</ol>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hard water breakthrough</td>
+<td>Insufficient brine contact time</td>
+<td>Extend slow rinse time; check injector size</td>
+</tr>
+<tr>
+<td>Resin not regenerating fully</td>
+<td>Brine draw time too short</td>
+<td>Increase brine draw time in controller</td>
+</tr>
+<tr>
+<td>Excessive water to drain</td>
+<td>Backwash time too long or DLFC too large</td>
+<td>Reduce backwash time or swap DLFC to 2.5 GPM</td>
+</tr>
+<tr>
+<td>Bed channelling / resin in outlet</td>
+<td>Backwash flow too high</td>
+<td>Reduce DLFC to 2.5 GPM and re-test</td>
+</tr>
+<tr>
+<td>Brine tank not refilling</td>
+<td>BLFC blocked or wrong refill time</td>
+<td>Check BLFC disc; verify refill time in controller</td>
+</tr>
+<tr>
+<td>Hard water bypass during service</td>
+<td>Valve body/piston mismatch</td>
+<td>Verify upflow body + upflow piston, or downflow body + downflow piston — never mix</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="notes-for-swedish-nordic-installations">Notes for Swedish / Nordic Installations</h2>
+<ul>
+<li>Groundwater with pump + pressure vessel (hydropress): pressure cycles between cut-in and cut-out. The Clack venturi draw rate plateaus above ~2.75 bar so this does not affect brine draw consistency.</li>
+<li>Cold groundwater (5–10°C) slightly reduces brine draw rate vs. rated values. In upflow mode, do not oversize the injector as cold dense water increases hydraulic pressure on the resin bed.</li>
+<li>Kinetico spare parts are difficult to source in Sweden. Clack parts (injectors, DLFC discs, O-ring kits, pistons) are available from multiple European water treatment suppliers for a few euros each.</li>
+<li>The Clack WS1TT requires a <strong>230V power supply</strong> for the controller motor. Unlike Kinetico, it is not water-powered. Ensure a nearby power outlet is available.</li>
+</ul>
+<hr />
+<h2 id="summary-checklist">Summary Checklist</h2>
+<ul>
+<li>[ ] Identify your Kinetico model (4060 M/T, 4060s OD MAC, etc.)</li>
+<li>[ ] Decide: upflow or downflow regen (upflow = more efficient; downflow = easier to source)</li>
+<li>[ ] Benchmark Kinetico brine draw rate (bucket test)</li>
+<li>[ ] Note venturi throat colour from spare/old Kinetico head</li>
+<li>[ ] Order Clack WS1TT CI — check manual for field convertibility; if convertible, order upflow piston (V3011-01) separately if needed</li>
+<li>[ ] Order 3.0 GPM DLFC disc</li>
+<li>[ ] Order correct injector: A/black (upflow) or C/violet (downflow)</li>
+<li>[ ] Verify 0.40 GPM BLFC in brine valve assembly</li>
+<li>[ ] Install injector in correct port; plug the other port</li>
+<li>[ ] Set controller to Up Brine or Dn Brine to match valve body</li>
+<li>[ ] Program brine draw time from bucket test result</li>
+<li>[ ] Set slow rinse to 45–60 min (anion/mixed resin)</li>
+<li>[ ] Verify first regeneration cycle and test water quality</li>
+</ul>
+<hr />
+<p><em>Guide developed based on Kinetico 4060 M/T / 4060s OD MAC service documentation and the Water Specialist WS1TT Drawings and Service Manual. Always consult the full Clack WS1TT CI Programming Manual for complete parameter descriptions.</em></p>
+<p>*© Lennard Mooij, 2026. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-03-04 14:46:31.420886+00:00
+-->
